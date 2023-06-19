@@ -1,7 +1,7 @@
 class GenericActions {
 
-    visit(){
-        cy.visit("/");
+    visit(url){
+        cy.visit(url);
     }
 
     wait(time){

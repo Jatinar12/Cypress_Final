@@ -20,7 +20,7 @@ module.exports = defineConfig({
       return config;
     },
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://admin-demo.nopcommerce.com",
+    baseUrl: "http://my-doctors.net/",
     chromeWebSecurity: false,
     chromeWebSecurity: false,
     viewportHeight: 900,

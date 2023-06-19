@@ -1,10 +1,10 @@
 class WebText {
    
-    getText(element) {
+    getText(element,text) {
         try {
-            return element.invoke('text').then(function (text) {
+            cy.get(element).invoke('text').then(function (text) {
                 return new Promise(function (resolve, reject) {
-                    cy.log("The text of element is captured which is: " + err);
+                    cy.log("The text of element is captured which is: " + element);
                     resolve(text);
                 })
             })
@@ -15,7 +15,7 @@ class WebText {
     }
 
     shouldHaveText(element, text) {
-        element.should('have.text', text).then(function (text) {
+        cy.get(element).should('have.text', text).then(function (text) {
             cy.log("The element is have: " + text);
 
         }, function (err) {
@@ -24,7 +24,7 @@ class WebText {
 
     }
     shouldHaveValue(element, value) {
-        element.should('have.value', value).then(function (text) {
+        cy.get(element).should('have.value', value).then(function (text) {
             cy.log("The element have value: " + value);
 
         }, function (err) {
@@ -34,7 +34,7 @@ class WebText {
     }
 
     shouldContainText(element, text) {
-        element.should('contain', text).then(function (text) {
+        cy.get(element).should('contain', text).then(function (text) {
             cy.log("The element contain: " + text);
 
         }, function (err) {
@@ -83,7 +83,6 @@ class WebText {
         catch (err) {
             cy.log("There was an Exception in the comparison of attibute value");
         }
-
     }
 
     verifyPartialAttribute(element, attribute, value) {

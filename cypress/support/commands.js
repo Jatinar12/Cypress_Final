@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/// <reference types="Cypress" />
+/// <reference types="cypress-xpath" />
+Cypress.Commands.add('Doctor', (email, password) => {
+    cy.visit("/");
+    cy.get(".MuiButton-label").click();
+    cy.get("#emailOrMobile").type("PFCNIUHO@gmail.com");
+    cy.get("#password").type("123@Ab1");
+    cy.get(".MuiButton-label:last()").click();
+});

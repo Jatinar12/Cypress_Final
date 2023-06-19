@@ -115,7 +115,7 @@ class WebElement {
     }
 
     getAttribute(element, attribute) {
-        element.invoke('attr', attribute).then(function (text) {
+        cy.get(element).invoke('attr', attribute).then(function (text) {
             cy.log("The attribute of element is captured which is: " + text);
             return text;
         }, function (err) {
@@ -131,7 +131,9 @@ class WebElement {
             cy.log('--->Error: Unable to drag Element due to' + err);
         });
     }
-
+    shouldBeVisible(element) {
+        cy.get(element).should('be.visible')
+    }
 
 
 }
