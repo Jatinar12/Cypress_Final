@@ -8,7 +8,7 @@ import commonLocators from "../../pages/commonLocators.json"
 
 const webTextBox = new WebTextBox();
 const decode = new Decryption();
-const generics = new GenericActions();
+const actions = new GenericActions();
 
 When('user enters the user {string} in the {string} input field', (userData,element) => {
     let decodedText = decode.getDecodedString(userData);
@@ -16,5 +16,5 @@ When('user enters the user {string} in the {string} input field', (userData,elem
 })
 
 Then('user should navigate to the {string}', (url) => {
-    generics.checkUrl(Urls[url])
+    actions.checkUrl(Urls[url])
 })

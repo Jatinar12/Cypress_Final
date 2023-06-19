@@ -1,126 +1,74 @@
 Feature: Search page result functionality
 
-    # https://team-1628225445927.atlassian.net/browse/MYD-156
-    # @MYD-156
-    # @Regression
+    https://team-1628225445927.atlassian.net/browse/MYD-156
+    @MYD-156
+    @Regression
 
     Scenario Outline: check for the search result page using search keyword  or specialization
         Given user navigates to the "<Page Type>" page
         And "search" keyword is "<keyword>"
-        And "specialization" is "<special>"
-        And "search logo" is clicked
-        # And current page is "<page>"
-        # And per page is "<count>"
-        # When search page  is loaded
-        # Then Result contain search keyword "<keyword>"
-        # And Doctor for specialization "<special>" are displayed
+        And "speciality" is "<special>"
+        And search "logo" is clicked
+        And "doctor" per page is "<count>"
+        Then "user" should see "<keyword>"
 
         Examples:
             | Page Type | keyword | special         | page | count |
-            | Homepage  | Layne   | Cardiac Surgery | 1    | 5     |
+            | Homepage  | Layne   | Cardiac Surgery | 1    | 1     |
 
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
+    #https://team-1628225445927.atlassian.net/browse/MYD-156
+    @MYD-156
 
-# Scenario: check for the search result page using search keyword
-#     Given search keyword is <keyword>
-#     And current page is <page>
-#     And per page is <count>
-#     When search page  is loaded
-#     Then Result contain doctor for search keyword <keyword> are displayed
+    Scenario: check for the search result page using search keyword
+        Given user navigates to the "<Page Type>" page
+        And "search" keyword is "<keyword>"
+        And search "logo" is clicked
+        And "doctor" per page is "<count>"
+        Then "user" should see "<keyword>"
 
-# Example:
-#         | keyword | page | count |
-#         | Anjali  | 1    | 5     |
+    Examples:
+            | Page Type | keyword | page | count |
+            | Homepage  | Layne   | 1    | 1     |
 
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
+    #https://team-1628225445927.atlassian.net/browse/MYD-156
+    @MYD-156
 
-# Scenario: check for the search result page using specialization
-#     Given specialization is <special>
-#     And current page is <page>
-#     And per page is <count>
-#     When search page  is loaded
-#     Then Result contain doctor for specialization <special> are displayed
+    Scenario: check for the search result page using specialization
+        Given user navigates to the "<Page Type>" page
+        And "speciality" is "<special>"
+        And search "logo" is clicked
+        And "doctor" per page is "<count>"
+        Then "user" should see "<Special>"
 
-# Example:
-#         | special | page | count |
-#         | dentist | 1    | 5     |
+        Examples:
+            | Page Type | special                        | page | count |
+            | Homepage  | Clinical Nutrition & Dietetics | 1    | 1     |
 
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
 
-# Scenario: Patient check for the pagination in Search result page on first page
-#     Given search keyword is <keyword>
-#     And patient is on page no. 1
-#     And search page is loaded
-#     And previous button is disabled
-#     And next button is enabled
-#     When patient clicks on next button
-#     Then patient navigate to page no. 2
-#     And previous button is enabled
+    #https://team-1628225445927.atlassian.net/browse/MYD-156
+    @MYD-156
 
-# Example:
-#         | keyword |
-#         | Singh   |
+    Scenario: check for the search result page using unexpected string in search keyword or specialization
+        Given user navigates to the "<Page Type>" page
+        And "search" keyword is "<keyword>"
+        And "speciality" is "<special>"
+        And search "logo" is clicked
+        Then Result contain "error message" "<message>"
 
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
+        Examples:
+            | Page Type | keyword | special | message         |
+            | Homepage  | @@@!@   | 78dbxbd | No result found |
+            | Homepage  | @@@!@   | __      | No result found |
+            | Homepage  | __      | @@@!@   | No result found |
 
-# Scenario: Patient check for the pagination in Search result page on last page
-#     Given search keyword is <keyword>
-#     And patient is on page no. 1
-#     And search page is loaded
-#     And previous button is enabled
-#     And next button is disabled
-#     When patient clicks on previous button
-#     Then patient navigates to previous page
-#     And next button is enabled
+    #https://team-1628225445927.atlassian.net/browse/MYD-156
+    @MYD-156
 
-# Example:
-#         | keyword |
-#         | Singh   |
-
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
-
-# Scenario: Patient check for the pagination in Search result page on other page
-#     Given search keyword is <keyword>
-#     And patient is on page no.<page>
-#     And search page is loaded
-#     And next and previous button is enabled
-#     When patient clicks on <button> button
-#     Then patient is navigate to page number <value>
-
-#     Examples:
-#         | keyword | page | button | value |
-#         | Singh   | 1    | 2      | 2     |
-#         | Singh   | 3    | 2      | 2     |
-#         | Singh   | 5    | 3      | 3     |
-
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
-
-# Scenario: check for the search result page using unexpected string in search keyword or specialization
-#     Given search keyword is <keyword>
-#     And specialization is <special>
-#     When search page is loaded
-#     Then Result contain error message <message>
-
-# Example:
-#         | keyword | special | message         |
-#         | @@@!@   | 78dbxbd | No result found |
-#         | @@@!@   |         | No result found |
-#         |         | @@@!@   | No result found |
-
-# #https://team-1628225445927.atlassian.net/browse/MYD-156
-# @MYD-156
-
-# Scenario: check for the search result page using no input given
-#     Given search keyword is <keyword>
-#     And specialization is <special>
-#     When search page is loaded
-#     Then result page is move to dashboard page
-# Example:
-#         | keyword | special |
-#         |         |         |
+    Scenario: check for the search result page using no input given
+        Given user navigates to the "<Page Type>" page
+        And "speciality" is "<special>"
+        And search "logo" is clicked
+        Then result page is move to dashboard page
+        Examples:
+            | Page Type | keyword | special |
+            | Homepage  |         | __      |
