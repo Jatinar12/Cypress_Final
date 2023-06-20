@@ -28,11 +28,10 @@ Then('{string} should see {string}', (element,text) => {
     webElement.shouldBeVisible(commonLocators[element],text)
 })
 
-Then('Result contain {string} {string}', (element,text) => {
-    webElement.shouldBeVisible(commonLocators[element], text)
-})
-
-
 Then('result page is move to dashboard page', () => {
     actions.checkUrl("/")
+})
+
+Then('Result contain {string} {string}', (element,text) => {
+    webElement.shouldBeVisible(commonLocators[element], text)
 })

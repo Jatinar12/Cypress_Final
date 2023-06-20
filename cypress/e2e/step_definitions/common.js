@@ -38,7 +38,6 @@ Given('the corresponding page appears with the expected elements: {string}', (el
     for (let count = 0; count < textArray.length; count++) {
         webXpath.shouldContainTextByXpath(textArray[count])
     }
-    
 })
 
 Given('user is on {string} page', (Page) => {

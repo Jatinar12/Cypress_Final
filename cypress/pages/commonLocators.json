@@ -33,5 +33,4 @@
   "doctor" : "div .MuiTypography-root:eq(6)",
   "user" : "div .MuiTypography-h6",
   "error message" : "div .MuiTypography-root:last()"
-
 }

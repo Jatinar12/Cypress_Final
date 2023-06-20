@@ -132,10 +132,13 @@ class WebElement {
         });
     }
     shouldBeVisible(element) {
-        cy.get(element).should('be.visible')
+        cy.get(element).should('be.visible').then(function() {
+            cy.log("Element is visible");
+        }), function (err){
+            cy.log("-->Error: Element couldn't be visible");
+        }
     }
-
-
+    
 }
 
 export default WebElement
