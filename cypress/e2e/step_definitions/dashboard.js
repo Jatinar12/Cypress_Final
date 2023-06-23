@@ -10,7 +10,7 @@ const webButton = new WebButton();
 
 Given('user can view list of {string}', (element) => {
     webElement.shouldBeVisible(commonLocators[element])
-})
+})   
 
 When("user clicks on {string} {string}", function (elementIdentifier, pageNumber) {
     let identifier = `${commonLocators[elementIdentifier]}:contains("${pageNumber}")`;

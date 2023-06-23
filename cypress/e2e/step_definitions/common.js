@@ -17,6 +17,7 @@ const webElement = new WebElement();
 
 
 Given('user navigates to the {string} page', (url)=> {
+    cy.wait(2000)
     actions.visit(Urls[url]);
 }) 
 
@@ -25,6 +26,7 @@ When('user clicks on the {string}', (element) => {
 })
 
 When('user enters value {string} in the {string} input field', (text, element) => {
+    webButton.focusClick(commonLocators[element])
     webTextBox.typeText(commonLocators[element], text)
 })
 
