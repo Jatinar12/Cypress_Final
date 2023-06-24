@@ -17,11 +17,12 @@ const webElement = new WebElement();
 
 
 Given('user navigates to the {string} page', (url)=> {
-    cy.wait(2000)
+    cy.wait(2000);
     actions.visit(Urls[url]);
 }) 
 
 When('user clicks on the {string}', (element) => {
+    cy.wait(500);
     webButton.click(commonLocators[element])
 })
 

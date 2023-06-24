@@ -33,26 +33,28 @@
   "doctor" : "div .MuiTypography-root:eq(6)",
   "user" : "div .MuiTypography-h6",
   "error message" : "div .MuiTypography-root:last()",
-
   "current password" : "div .MuiInputBase-root:contains('Current Password')",
-  "new password" : "div .MuiInputBase-root:contains('New Password')",
-  "confirmed password" : "div .MuiInputBase-root:contains('Confirm Password')",
-  
-  
+  "new password" : "div .MuiInputBase-input:eq(3)",
+  "confirmed password" : "div .MuiInputBase-root:last()",
   "submit" : "div .MuiButton-label",
   "Doctor" : "div .MuiCardContent-root:eq(2)",
   "first slot" : "div .MuiTab-wrapper:eq(0)",
   "first time slot" : "div .MuiChip-label:eq(0)",
   "Error Message" : "div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-6 div:contains('Please')",
   "patient name" : "div .MuiInputBase-root:eq(2)",
-
   "credit/debit card number" : "div .MuiFormControl-root:contains('Card Number') ",
   "expiration month field" : "div .MuiFormControl-root .MuiInputBase-input:eq(1)",
   "select field" : ".Mui-selected",
   "expiration year field" : "div .MuiInputBase-input:eq(4)",
   "security code" : "div .MuiFormControl-root:last()",
-
   "patient mobile number" : "div .MuiInputBase-root:last()",
   "provided email" : "div .MuiFormControl-root .MuiInputBase-root .MuiInputBase-input",
-  "send reset link button" : "div .MuiButtonBase-root:last()"
+  "send reset link button" : "div .MuiButtonBase-root:last()",
+  "search bar" : "div .MuiFormControl-root:first()",
+  "disabled" : "div .MuiPagination-ul .MuiButtonBase-root:eq(0)",
+  "enabled" : "div .MuiButtonBase-root:contains('2')",
+  "speciality filter field" : "div .MuiSelect-root",
+  "speciality filter" : "div li[data-value='8']",
+  "update password" : "div .MuiBox-root .MuiInputBase-root:first()",
+  "reset password button" : "div .MuiButton-label:last()"
 }

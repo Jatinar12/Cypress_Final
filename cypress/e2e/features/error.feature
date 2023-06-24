@@ -5,8 +5,8 @@ Feature: Error Page
       Given user navigates to the "<Page Type>" page
       And the corresponding page appears with the expected elements: "<Item>"
       Examples:
-          | Page Type | Item  |
-          | 404 error | OOPS! |
+        | Page Type | Item  |
+        | 404 error | OOPS! |
 
 
   @ERPA002 @MYD-83 @Regression @Sanity @NotAutomated @Patient @Error
