@@ -56,3 +56,11 @@ Then("User is on {string} {string}", function (pageNumber, elementIdentifier) {
 Given('{string} per page is {string}', (element,text) => {
     webElement.shouldBeVisible(commonLocators[element], text)
 })
+
+When('user clicks on the {string} field', (element) => {
+    webXpath.clickByXpath("visibleText",element)
+})
+
+Then('user can view {string}', (text) => {
+    webXpath.shouldContainTextByXpath(text)
+})

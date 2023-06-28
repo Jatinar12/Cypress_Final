@@ -30,6 +30,8 @@
   "icon button" : "div .MuiIconButton-label .MuiSvgIcon-root",
   "current page" : "div .MuiTypography-root MuiTypography-h6",
   "logo" : " div .MuiPaper-root .MuiButtonBase-root:first()",
+  "Patient_email" : "div #emailOrMobile",
+  "Patient_password" : "div #password",
   "doctor" : "div .MuiTypography-root:eq(6)",
   "user" : "div .MuiTypography-h6",
   "error message" : "div .MuiTypography-root:last()",
@@ -56,5 +58,7 @@
   "speciality filter field" : "div .MuiSelect-root",
   "speciality filter" : "div li[data-value='8']",
   "update password" : "div .MuiBox-root .MuiInputBase-root:first()",
-  "reset password button" : "div .MuiButton-label:last()"
+  "reset password button" : "div .MuiButton-label:last()",
+  "Doctor_email" : "div #emailOrMobile",
+  "Doctor_password" : "div #password"
 }

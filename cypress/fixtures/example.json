@@ -1,6 +1,11 @@
 {
   "PATIENT_EMAIL":"QWJjMTIzNDVAZ21haWwuY29t",
-  "PATIENT_PASSWORD":"QUJjQDEyMzQ="
+  "PATIENT_PASSWORD":"QUJjQDEyMzQ=",
+  "Doctor_email" : "PFCNIUHO@gmail.com",
+  "Doctor_password" : "123@Ab1",
+  "Patient_email" : "JFCAUIZX@gmail.com",
+  "Patient_password" : "Asdx@34v",
+  "dashboard" : "/"
 }
 
 

@@ -3,6 +3,7 @@ import commonLocators from "../../pages/commonLocators.json"
 import WebTextBox from "../../helpers/webTextBox";
 import WebElement from "../../helpers/webElement";
 import WebButton from "../../helpers/webButton";
+import credentials from "../../fixtures/example.json"
 import GenericActions from "../../utilities/genericActions";
 
 const webTextBox = new WebTextBox();
@@ -28,8 +29,8 @@ Then('{string} should see {string}', (element,text) => {
     webElement.shouldBeVisible(commonLocators[element],text)
 })
 
-Then('result page is move to dashboard page', () => {
-    actions.checkUrl("/")
+Then('result page is move to {string} page', (url) => {
+    actions.checkUrl(credentials[url]);
 })
 
 Then('Result contain {string} {string}', (element,text) => {

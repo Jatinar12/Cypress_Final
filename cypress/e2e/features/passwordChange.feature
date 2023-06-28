@@ -12,7 +12,7 @@ Feature: Change password
         Then user can view "<Message>"
         Examples:
             | Role    | Page Type       | current password | New Password | Confirm Password | Message                       |
-            | Patient | Change Password | Asdx@34vr        | Asdx@34v     | Asdx@34v         | Password changes successfully |
+            | Patient | Change Password | Asdx@34v         | Asdx@34vr    | Asdx@34vr        | Password changes successfully |
 
 
     @CHPA002 @MYD-197 @Regression @Patient @ChangePassword

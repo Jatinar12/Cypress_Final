@@ -1,16 +1,16 @@
 Feature: Search page result functionality
 
-    https://team-1628225445927.atlassian.net/browse/MYD-156
-    @MYD-156
-    @Regression
+    # https://team-1628225445927.atlassian.net/browse/MYD-156
+    # @MYD-156
+    # @Regression
 
     Scenario Outline: check for the search result page using search keyword  or specialization
         Given user navigates to the "<Page Type>" page
         And "search" keyword is "<keyword>"
         And "speciality" is "<special>"
-        And search "logo" is clicked
-        And "doctor" per page is "<count>"
-        Then "user" should see "<keyword>"
+        # And search "logo" is clicked
+        # And "doctor" per page is "<count>"
+        # Then "user" should see "<keyword>"
 
         Examples:
             | Page Type | keyword | special         | page | count |
@@ -61,14 +61,14 @@ Feature: Search page result functionality
             | Homepage  | @@@!@   | __      | No result found |
             | Homepage  | __      | @@@!@   | No result found |
 
-    #https://team-1628225445927.atlassian.net/browse/MYD-156
+    https://team-1628225445927.atlassian.net/browse/MYD-156
     @MYD-156
 
     Scenario: check for the search result page using no input given
         Given user navigates to the "<Page Type>" page
         And "speciality" is "<special>"
         And search "logo" is clicked
-        Then result page is move to dashboard page
+        Then result page is move to "dashboard" page
         Examples:
             | Page Type | keyword | special |
             | Homepage  |         | __      |

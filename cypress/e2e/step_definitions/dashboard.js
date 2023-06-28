@@ -22,6 +22,6 @@ When('User is on {string} page of {string}', (text,elementIdentifier) => {
     webText.getText(commonLocators[elementIdentifier],text)
 })
 
-When('user clicks on {string} page of {string}', (text,element) => {
-    webButton.click(commonLocators[element],text)
+When('user clicks on {string} page of {string}', (d,element) => {
+    webButton.click(commonLocators[element])
 })
