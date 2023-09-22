@@ -7,9 +7,9 @@ Feature: Search Bar
         And user clicks on the "logo"
         Then the corresponding page appears with the expected elements: "<Item>"
         Examples:
-            | Page Type | Data    | Item                                     |
-            | Homepage  | Rishika | Dr. Rishika                              |
-            | Homepage  | Ra      | Dr. Kasandra Halvorson,Dr. Mariela Grady |
+            | Page Type | Data    | Item                               |
+            | Homepage  | Wava    | Dr. Wava Grant                     |
+            | Homepage  | Ro      | Dr. Rosina Watsica,Dr. Roslyn Rath |
 
     @SEBA002 @Regression @MYD-40 @NotAutomated @Patient @Specialities @Search
     Scenario Outline: Search Bar - Check for the search functionality for specialities
@@ -20,8 +20,8 @@ Feature: Search Bar
         And user clicks on the "specialities card"
         Then the corresponding page appears with the expected elements: "<Item>"
         Examples:
-            | Page Type | value  | Item                                               |
-            | Homepage  | Dental | Dr. Iva Jerde,Dr. Yasmine Cartwright,Dr. Jo Schumm |
+            | Page Type | value  | Item                                      |
+            | Homepage  | Dental | Dr. Morgan Altenwerth,Dr. Akeem Lueilwitz |
 
     # @SEBA003 @Regression @Sanity @MYD-40 @NotAutomated @Patient @Specialities @Search
     Scenario Outline: Search Bar - Check for the search functionality for doctors and specialities
@@ -32,9 +32,9 @@ Feature: Search Bar
         Then the corresponding page appears with the expected elements: "<Item>"
 
         Examples:
-            | Page Type | value                  | Data  | Item           |
-            | Homepage  | Critical Care Medicine | Dusty | Dr. Dusty Huel |
-            | Homepage  | Cosmetology            | Layne | Dr. Layne Ryan |
+            | Page Type | value                  | Data   | Item               |
+            | Homepage  | Critical Care Medicine | Joesph | Dr. Joesph Hermann |
+            | Homepage  | Cosmetology            | Tom    | Dr. Tom Thompson   |
 
     #@SEBA004 @Regression @MYD-40 @NotAutomated @Patient @Search
     Scenario Outline: Search Bar - Check for the search functionality with invalid doctor name

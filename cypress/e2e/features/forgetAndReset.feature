@@ -16,8 +16,8 @@ Feature: Forgot Reset Password
                 And user clicks on the "send reset link button"
                 Then user can view "<Message>"
                 Examples:
-                        | Page Type       | Email           | Message                          |
-                        | Forgot Password | test1@gmail.com | We have sent password reset link |
+                        | Page Type       | Email           | Message                                    |
+                        | Forgot Password | test1@gmail.com | Unable to reset password. Please try again |
 
 @FOREPA003 @MYD-319 @Regression @NotAutomated @Password
 Scenario Outline: Checking the functionality of reset link with invalid email

@@ -4,16 +4,19 @@ import credentails from "../../fixtures/example.json"
 import GenericActions from "../../utilities/genericActions";
 import WebButton from "../../helpers/webButton";
 import WebTextBox from "../../helpers/webTextBox";
-import WebXpath from "../../helpers/webXpath";
-const actions = new GenericActions();
-const webButton = new WebButton();
-const webTextBox = new WebTextBox();
-const webXpath =new WebXpath();
+import Decryption from "../../utilities/decryption";
 
 Given('user logs in with {string} credentials', (role) => {
+    const actions = new GenericActions();
+    const webButton = new WebButton();
+    const webTextBox = new WebTextBox();
+    const decryption =  new Decryption();
+
+    const decoded_string = decryption.getDecodedString(`${role}_EMAIL`);
+    const decoded_email = decryption.getDecodedString(`${role}_PASSWORD`);
     actions.visit("/");
     webButton.click(commonLocators['login button'])
-    webTextBox.typeText(commonLocators[`${role}_email`], credentails[`${role}_email`])
-    webTextBox.typeText(commonLocators[`${role}_password`], credentails[`${role}_password`])
+    webTextBox.typeText(commonLocators[`${role}_EMAIL`], decoded_string)
+    webTextBox.typeText(commonLocators[`${role}_PASSWORD`], decoded_email)
     webButton.click(commonLocators['submit button'])
 })

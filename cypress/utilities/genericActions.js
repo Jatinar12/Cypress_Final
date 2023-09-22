@@ -42,7 +42,6 @@ class GenericActions {
         }, function (err) {
             cy.log("--->Error: The title of of the Webpage is not captured: due to: " + err);
         });
-
     }
     
     clearCookies() {
@@ -53,13 +52,10 @@ class GenericActions {
         catch (err) {
             cy.log("The Failed To clear the Catch Data");
         }
-
     }
 
     getUnixTimeStamp() {
-
-        var formattedTime = Math.round((new Date()).getTime() / 1000);
-        return formattedTime;
+        return  Math.round((new Date()).getTime() / 1000);
     }
 
     utf8_decode(utftext) {
@@ -88,7 +84,6 @@ class GenericActions {
         }
 
         return string;
-
     }
 
     generateEmailAddresss() {
@@ -147,7 +142,6 @@ class GenericActions {
 
         output = this.utf8_decode(output);
         return output;
-
     }
 
 }

@@ -8,18 +8,18 @@ Feature: Search page result functionality
         Given user navigates to the "<Page Type>" page
         And "search" keyword is "<keyword>"
         And "speciality" is "<special>"
-        # And search "logo" is clicked
-        # And "doctor" per page is "<count>"
-        # Then "user" should see "<keyword>"
+        And search "logo" is clicked
+        And "doctor" per page is "<count>"
+        Then "user" should see "<keyword>"
 
         Examples:
-            | Page Type | keyword | special         | page | count |
-            | Homepage  | Layne   | Cardiac Surgery | 1    | 1     |
+            | Page Type | keyword | special | page | count |
+            | Homepage  | Sara    | Bone    | 1    | 1     |
 
-    #https://team-1628225445927.atlassian.net/browse/MYD-156
-    @MYD-156
+    # https://team-1628225445927.atlassian.net/browse/MYD-156
+    # @MYD-156
 
-    Scenario: check for the search result page using search keyword
+    Scenario Outline: check for the search result page using search keyword
         Given user navigates to the "<Page Type>" page
         And "search" keyword is "<keyword>"
         And search "logo" is clicked
@@ -28,12 +28,12 @@ Feature: Search page result functionality
 
     Examples:
             | Page Type | keyword | page | count |
-            | Homepage  | Layne   | 1    | 1     |
+            | Homepage  | Sara    | 1    | 1     |
 
-    #https://team-1628225445927.atlassian.net/browse/MYD-156
-    @MYD-156
+    # https://team-1628225445927.atlassian.net/browse/MYD-156
+    # @MYD-156
 
-    Scenario: check for the search result page using specialization
+    Scenario Outline: check for the search result page using specialization
         Given user navigates to the "<Page Type>" page
         And "speciality" is "<special>"
         And search "logo" is clicked
@@ -42,13 +42,13 @@ Feature: Search page result functionality
 
         Examples:
             | Page Type | special                        | page | count |
-            | Homepage  | Clinical Nutrition & Dietetics | 1    | 1     |
+            | Homepage  | Clinical Nutrition & Dietetics | 12    | 12   |
 
 
     #https://team-1628225445927.atlassian.net/browse/MYD-156
-    @MYD-156
+    # @MYD-156
 
-    Scenario: check for the search result page using unexpected string in search keyword or specialization
+    Scenario Outline: check for the search result page using unexpected string in search keyword or specialization
         Given user navigates to the "<Page Type>" page
         And "search" keyword is "<keyword>"
         And "speciality" is "<special>"
@@ -61,14 +61,14 @@ Feature: Search page result functionality
             | Homepage  | @@@!@   | __      | No result found |
             | Homepage  | __      | @@@!@   | No result found |
 
-    https://team-1628225445927.atlassian.net/browse/MYD-156
-    @MYD-156
+    # # https://team-1628225445927.atlassian.net/browse/MYD-156
+    # # @MYD-156
 
-    Scenario: check for the search result page using no input given
+    Scenario Outline: check for the search result page using no input given
         Given user navigates to the "<Page Type>" page
         And "speciality" is "<special>"
         And search "logo" is clicked
-        Then result page is move to "dashboard" page
+        Then result page is move to "DASHBOARD" page
         Examples:
             | Page Type | keyword | special |
             | Homepage  |         | __      |

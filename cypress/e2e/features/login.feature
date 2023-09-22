@@ -10,5 +10,5 @@ Feature: Login Section
     Then user should navigate to the "Homepage"
 
     Examples:
-      | Page type | email         | password         |
-      | Homepage  | PATIENT_EMAIL | PATIENT_PASSWORD |
+      | Page type | email      | password      |
+      | Homepage  | USER_EMAIL | USER_PASSWORD |

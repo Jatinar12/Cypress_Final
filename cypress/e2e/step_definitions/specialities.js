@@ -5,17 +5,18 @@ import WebButton from "../../helpers/webButton";
 
 
 const webElement = new WebElement();
-const webButton = new WebButton();
 
-Given('{string} button is {string}', (text, element) => {
-    webElement.shouldBeVisible(commonLocators[element], text)
+Given('{string} button is {string}', (text, elementIdentifier) => {
+    webElement.shouldBeVisible(commonLocators[elementIdentifier], text)
 })
 
-When("user clicks on the {string} button", (element) => {
-    webButton.click(commonLocators[element])
+When("user clicks on the {string} button", (elementIdentifier) => {
+    const webButton = new WebButton();
+    webButton.click(commonLocators[elementIdentifier])
 })
 
-Then("user is on {string} button", (element) => {
-    webElement.shouldBeVisible(commonLocators[element])
+Then("user is on {string} button", (elementIdentifier) => {
+    cy.wait(2000);
+    webElement.shouldBeVisible(commonLocators[elementIdentifier])
 })
 

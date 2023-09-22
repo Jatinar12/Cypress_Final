@@ -1,9 +1,9 @@
 class WebElement {
   
-    elementCount(element) {
+    elementCount(elementIdentifier) {
 
         try {
-            return element.its('length').then(function (size) {
+            return elementIdentifier.its('length').then(function (size) {
                 return new Promise(function (resolve, reject) {
                     resolve(size);
                 })
@@ -14,13 +14,23 @@ class WebElement {
         }
     }
 
-    elementIsPresent(element) {
+    elementIsPresent(elementIdentifier) {
         try {
-            if (element.should('exist')) {
-                cy.log("The Element: " + element + " is Present in the webpage.");
+            elementIdentifier.should('exist')
+        }  
+        catch (err) {
+            cy.log("The Element: " + elementIdentifier + " is not Present in the webpage.");
+            cy.log("There was an Exception in checking whether the element is Present.");
+        }
+    }
+
+    elementIsNotPresent(elementIdentifier) {
+        try {
+            if (elementIdentifier.should('not.exist')) {
+                cy.log("The Element: " + elementIdentifier + " is Not Present in the webpage.");
             }
             else {
-                cy.log("The Element: " + element + " is not Present in the webpage.");
+                cy.log("The Element: " + elementIdentifier + " is Present in the webpage.");
             }
         }
         catch (err) {
@@ -28,27 +38,13 @@ class WebElement {
         }
     }
 
-    elementIsNotPresent(element) {
+    elementIsDisplayed(elementIdentifier) {
         try {
-            if (element.should('not.exist')) {
-                cy.log("The Element: " + element + " is Not Present in the webpage.");
+            if (elementIdentifier.should('be.visible')) {
+                cy.log("The Element: " + elementIdentifier + " is Displyaed in the webpage.");
             }
             else {
-                cy.log("The Element: " + element + " is Present in the webpage.");
-            }
-        }
-        catch (err) {
-            cy.log("There was an Exception in checking whether the element is Present.");
-        }
-    }
-
-    elementIsDisplayed(element) {
-        try {
-            if (element.should('be.visible')) {
-                cy.log("The Element: " + element + " is Displyaed in the webpage.");
-            }
-            else {
-                cy.log("The Element: " + element + " is not Displayed in the webpage.");
+                cy.log("The Element: " + elementIdentifier + " is not Displayed in the webpage.");
             }
         }
         catch (err) {
@@ -58,13 +54,13 @@ class WebElement {
 
     }
 
-    elementIsNotDisplayed(element) {
+    elementIsNotDisplayed(elementIdentifier) {
         try {
-            if (element.should('not.be.visible')) {
-                cy.log("The Element: " + element + " is not Displyaed in the webpage.");
+            if (elementIdentifier.should('not.be.visible')) {
+                cy.log("The Element: " + elementIdentifier + " is not Displyaed in the webpage.");
             }
             else {
-                cy.log("The Element: " + element + " is Displayed in the webpage.");
+                cy.log("The Element: " + elementIdentifier + " is Displayed in the webpage.");
             }
         }
         catch (err) {
@@ -74,14 +70,14 @@ class WebElement {
 
     }
 
-    elementIsEnabled(element) {
+    elementIsEnabled(elementIdentifier) {
 
         try {
-            if (element.should("not.be.disabled")) {
-                cy.log("The Element: " + element + " is Displyaed in the webpage.");
+            if (elementIdentifier.should("not.be.disabled")) {
+                cy.log("The Element: " + elementIdentifier + " is Displyaed in the webpage.");
             }
             else {
-                cy.log("The Element: " + element + " is not Displayed in the webpage.");
+                cy.log("The Element: " + elementIdentifier + " is not Displayed in the webpage.");
             }
         }
         catch (err) {
@@ -90,13 +86,13 @@ class WebElement {
 
     }
    
-    elementIsNotEnabled(element) {
+    elementIsNotEnabled(elementIdentifier) {
         try {
-            if (element.should("be.disabled")) {
-                cy.log("The Element: " + element + " is Displayed in the webpage.");
+            if (elementIdentifier.should("be.disabled")) {
+                cy.log("The Element: " + elementIdentifier + " is Displayed in the webpage.");
             }
             else {
-                cy.log("The Element: " + element + " is not Displayed in the webpage.");
+                cy.log("The Element: " + elementIdentifier + " is not Displayed in the webpage.");
             }
         }
         catch (err) {
@@ -105,8 +101,8 @@ class WebElement {
     }
 
     
-    shouldHaveCSS(element, cssname, value) {
-        element.should('have.css', cssname, value).then(function (text) {
+    shouldHaveCSS(elementIdentifier, cssname, value) {
+        elementIdentifier.should('have.css', cssname, value).then(function (text) {
             cy.log("The element have css value: " + value);
 
         }, function (err) {
@@ -114,8 +110,8 @@ class WebElement {
         });
     }
 
-    getAttribute(element, attribute) {
-        cy.get(element).invoke('attr', attribute).then(function (text) {
+    getAttribute(elementIdentifier, attribute) {
+        cy.get(elementIdentifier).invoke('attr', attribute).then(function (text) {
             cy.log("The attribute of element is captured which is: " + text);
             return text;
         }, function (err) {
@@ -131,13 +127,23 @@ class WebElement {
             cy.log('--->Error: Unable to drag Element due to' + err);
         });
     }
-    shouldBeVisible(element) {
-        cy.get(element).should('be.visible').then(function() {
+
+    shouldBeVisible(elementIdentifier) {
+        this.getWebElement(elementIdentifier).should('be.visible').then(function() {
             cy.log("Element is visible");
         }), function (err){
             cy.log("-->Error: Element couldn't be visible");
         }
     }
+
+    getWebElement(identifierValue) {
+     let locators = identifierValue.split(",")
+        switch (locators[0]) {
+            case "xpath" : return cy.xpath(locators[1]);
+            case "css" : return cy.get(locators[1]);
+        };
+    }
+    
     
 }
 

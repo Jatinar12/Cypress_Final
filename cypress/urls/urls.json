@@ -1,6 +1,6 @@
 {
     "Homepage":"/",
-    "patient signup":"/auth/signup",
+    "Patient Signup":"/auth/signup",
     "404 error" : "/error",
     "Login" : "/auth/login",
     "Forgot Password" : "/forgot",

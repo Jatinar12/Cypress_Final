@@ -12,14 +12,13 @@ Feature: Error Page
   @ERPA002 @MYD-83 @Regression @Sanity @NotAutomated @Patient @Error
   Scenario Outline: Checking the functionality of 404 error page
     Given user logs in with "<Role>" credentials
-    And user navigates to the "<Page Type>" page
     When user clicks on the "<Text Links>" field
     Then the corresponding page appears with the expected elements: "<Item>"
     Examples:
       | Page Type | Role    | Text Links       | Item                          |
-      | 404 error | Patient | My Appointments  | My Appointment                |
-      | 404 error | Patient | Account Settings | My Profile                    |
-      | 404 error | Patient | Doctors          | 20+ Specialities,240+ Doctors |
+      | 404 error | PATIENT | My Appointments  | My Appointment                |
+      | 404 error | PATIENT | Account Settings | My Profile                    |
+      | 404 error | PATIENT | Doctors          | 20+ Specialities,110+ Doctors |
 
 
   @ERPA003 @MYD-83 @Regression @NotAutomated @Error
@@ -29,7 +28,7 @@ Feature: Error Page
     Then the corresponding page appears with the expected elements: "<Item>"
     Examples:
       | Page Type | Text Links   | Item                           |
-      | 404 error | Doctors      | 20+ Specialities,240+ Doctors  |
+      | 404 error | Doctors      | 20+ Specialities,110+ Doctors  |
       | 404 error | Login/SignUp | Login,Forgot Password?,Sign up |
 
   @ERPA004 @MYD-83 @Regression @Sanity @NotAutomated @Doctor @Error
@@ -40,5 +39,5 @@ Feature: Error Page
     Then the corresponding page appears with the expected elements: "<Item>"
     Examples:
       | Page Type | Role   | Text Links       | Item                                        |
-      | 404 error | Doctor | My Appointments  | My Appointment,No appointments are made yet |
-      | 404 error | Doctor | Account Settings | My Profile                                  |
+      | 404 error | DOCTOR | My Appointments  | My Appointment,No appointments are made yet |
+      | 404 error | DOCTOR | Account Settings | My Profile                                  |

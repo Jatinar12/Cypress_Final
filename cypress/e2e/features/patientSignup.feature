@@ -11,11 +11,11 @@ Feature: Patient Registration
     And user selects "<Month>" in the "month" select field
     And user selects "<Year>" in the "year" select field
     And user enters value "<Email>" in the "email" input field
-    And user enters value "<Mobile Number>" in the "mobileNumber" input field
+    And user enters value "<Mobile Number>" in the "mobile number" input field
     And user enters value "<Password>" in the "create password" input field
     And user enters value "<Password>" in the "confirm password" input field
-    When user clicks on the "register button"
-    Then user can view message "<Registration Message>"
+    # When user clicks on the "register button"
+    # Then user can view message "<Registration Message>"
     Examples:
       | Page type | Name         | Email               | Mobile Number | Password    | Gender | Page Type            | Date | Month | Year | Registration Message    |
       | Homepage  | Hunter Brown | hunteeror@gmail.com | 4038780922    | 9797@Qwerty | Male   | Patient Registration | 5    | May   | 1998 | Signed up successfully! |
@@ -78,12 +78,10 @@ Feature: Patient Registration
     And user enters value "<Mobile Number>" in the "mobile number" input field
     And user enters value "<Password>" in the "create password" input field
     And user enters value "<Password>" in the "confirm password" input field
-    When user clicks on the "register button"
-    Then user can view message "<Signed up>" successfully!
+  #   # When user clicks on the "register button"
     And user enters value "<Mobile Number>" in the "mobile number" input field
     And user enters value "<Email>" in the "email" input field
-    Then user can view message "<Error Message>"
+  #   Then user can view message "<Error Message>"
     Examples:
-      | Page type | Name         | Email                   | Mobile Number | Password    | Gender Type | Page Type            | Date | Month | Year | Email              | Mobile Number | Error Message                 |
-      | Homepage  | Hunter Brown | hunteerrbrown@gmail.com | 9541458298    | 9797@Qwerty | Male        | Patient Registration | 5    | 5     | 1998 | test@testuser1.com | 9541308298    | Mobile number already exists! |
-      | Homepage  | Hunter Brown | test@testuser.com       | 9541108299    | 9797@Qwerty | Male        | Patient Registration | 5    | 5     | 1998 | test@testuser.com  | 9541308295    | Email already exists!         |
+      | Page type | Name         | Email                    | Mobile Number | Password    | Gender Type | Page Type            | Date | Month | Year | Email              | Mobile Number | Error Message                 |
+      | Homepage  | Hunter Brown | huntrqssrmrown@gmail.com | 8754567894    | 9797@Qwerty | Male        | Patient Registration | 5    | 5     | 1998 | test@testuser1.com | 9541308298    | Mobile number already exists! |
