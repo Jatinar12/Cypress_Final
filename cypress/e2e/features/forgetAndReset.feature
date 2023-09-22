@@ -15,6 +15,7 @@ Feature: Forgot Reset Password
                 When user enters value "<Email>" in the "provided email" input field
                 And user clicks on the "send reset link button"
                 Then user can view "<Message>"
+                
                 Examples:
                         | Page Type       | Email           | Message                                    |
                         | Forgot Password | test1@gmail.com | Unable to reset password. Please try again |
