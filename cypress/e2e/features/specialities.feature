@@ -56,5 +56,5 @@ Feature: Specialities
         And user clicks on the "speciality filter"
         Then the corresponding page appears with the expected elements: "<Item>"
         Examples:
-            | Page Type    | speciality filter | Item                                                                                           |
-            | Specialities | 8                 | Breast & Oncoplastic - Oncology,Endocrinology & Diabetology,Cardiac Surgery,Clinical Nutrition |
+            | Page Type    | speciality filter | Item                                                                                            |
+            | Specialities | 8                 | Breast & Oncoplastic - Oncology,Endocrinology & Diabetology,Cardiac Surgery,Clinical Psychology |

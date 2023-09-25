@@ -1,6 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import commonLocators from "../../pages/commonLocators.json"
-import credentails from "../../fixtures/example.json"
 import GenericActions from "../../utilities/genericActions";
 import WebButton from "../../helpers/webButton";
 import WebTextBox from "../../helpers/webTextBox";

@@ -27,8 +27,8 @@ Feature: Dashboard
     Then the corresponding page appears with the expected elements: "<Item>"
 
     Examples:
-      | Page type | Item                                             |
-      | Homepage  | Cosmetology,Anethesiology,Critical Care Medicine |
+      | Page type | Item                                                        |
+      | Homepage  | Cosmetology,Anethesiology,Development Behavioral Pediatrics |
 
   @DA004 @Regression @Sanity @NotAutomated @Dashboard @DoctorCard @Patient @MYD-76
   Scenario Outline: Check the functionality of Doctor card
